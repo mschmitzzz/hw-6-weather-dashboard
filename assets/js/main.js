@@ -1,0 +1,6 @@
+var searchFormEl = document.querySelector("#search-form")
+var weatherDayCityEl = document.querySelector("#weather-day-city")
+var weatherDayTempEl = document.querySelector("#weather-day-temp")
+var weatherDayWindEl = document.querySelector("#weather-day-wind")
+var weatherDayHumidityEl = document.querySelector("#weather-day-humidity")
+var weatherDayUvIndexEl = document.querySelector("#weather-day-uv-index")
