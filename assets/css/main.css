@@ -2,3 +2,15 @@ dt {
     float: left;
     margin-right: 7px;
 }
+
+.favorable {
+    background-color: green;
+}
+
+.moderate {
+    background-color: yellow;
+}
+
+.severe {
+    background-color: red;
+}
