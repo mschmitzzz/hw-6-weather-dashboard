@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <title>Weather Dashboard</title>
   </head>
-  <body>
+  <body class="bg-info bg-opacity-10">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -40,7 +40,7 @@
             <div id="button-container"></div>
           </aside>
         </div>
-        <div class="col-9">
+        <div class="col-9 hide" id="weather-data">
           <main>
             <div class="row">
               <div class="col-12">
@@ -54,7 +54,7 @@
                   <dt>Humidity:</dt>
                   <dd id="weather-day-humidity"></dd>
                   <dt>UV Index:</dt>
-                  <dd id="weather-day-uv-index" class="rounded-pill"></dd>
+                  <dd id="weather-day-uv-index" class="badge"></dd>
                 </dl>
               </div>
             </div>

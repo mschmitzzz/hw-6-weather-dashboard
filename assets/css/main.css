@@ -9,8 +9,17 @@ dt {
 
 .moderate {
     background-color: yellow;
+    color: black;
 }
 
 .severe {
     background-color: red;
+}
+
+.card-weather {
+    float: left;
+}
+
+.hide {
+    display: none;
 }

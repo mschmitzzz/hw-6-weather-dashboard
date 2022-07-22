@@ -8,6 +8,7 @@ var weatherDayUvIndexEl = document.querySelector("#weather-day-uv-index")
 var forecastContainerEl = document.querySelector("#forecast-container")
 var weatherDayIconEl = document.querySelector("#weather-day-icon")
 var buttonContainerEl = document.querySelector("#button-container")
+var weatherDataEl = document.querySelector("#weather-data")
 
 var baseUrl = "http://api.openweathermap.org/";
 var apiKey = "902ed934f0d4c4e644f4024796540181";
@@ -25,7 +26,7 @@ function populate5Day(data) {
         var humidity = day.humidity;
         var icon = day.weather[0].icon;
         var div = document.createElement('div');
-        div.classList = 'card-weather col-md-3 col-sm-12 bg-dark text-light me-3'
+        div.classList = 'card-weather col-md-2 col-sm-12 bg-dark bg-gradient text-light me-3 mb-3'
         div.innerHTML = `
         <h4>${date}</h4>
         <img src="http://openweathermap.org/img/wn/${icon}.png" />
@@ -80,8 +81,10 @@ function getCityDayWeather(city) {
             weatherDayHumidityEl.textContent = humidity;
             weatherDayUvIndexEl.textContent = uvIndex;
             if (uvIndex < 3) {
+                weatherDayUvIndexEl.classList.remove('moderate', 'severe')
                 weatherDayUvIndexEl.classList.add('favorable')
-            } else if (uvIndex < 7) {
+            } else if (uvIndex >= 3 && uvIndex < 7) {
+                weatherDayUvIndexEl.classList.remove('severe')
                 weatherDayUvIndexEl.classList.add('moderate')
             } else {
                 weatherDayUvIndexEl.classList.add('severe')
@@ -130,9 +133,11 @@ function handleFormSubmit(evt) {
     evt.preventDefault();
     var city = searchFormCityInputEl.value;
     getCityDayWeather(city);
+    weatherDataEl.classList.remove('hide')
 }
 
 function handleButtonClick(evt) {
+    weatherDataEl.classList.remove('hide')
     var target = evt.target
     var city = target.getAttribute("data-city")
     getCityDayWeather(city)
